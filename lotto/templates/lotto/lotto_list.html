@@ -1,3 +1,4 @@
+{% load humanize %}
 <div align="center">
 {% if latest_list %}
 <table>
@@ -103,7 +104,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.nob }}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td width="150" align="right">{{ lotto.winmoney }}({{ lotto.winco }}명)</td>
+        <td width="150" align="right">{{ lotto.winmoney|intcomma }}({{ lotto.winco }}명)</td>
     </tr>
     {% endfor %}
 {% else %}
