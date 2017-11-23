@@ -3,14 +3,11 @@
 <div align="center">
 {% if latest_list %}
 <table>
-    <!-- <tr>
-        <th>회차</th>
-        <th>추첨일</th>
-        <th colspan='6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로또 번호</th>
-        <th>보너스</th>
-        <th>&nbsp;&nbsp;&nbsp;&nbsp;1등 상금</th>
-    </tr> -->
+    <tr>
+        <td colspan='7' bgcolor="#cccccc" height="2"></td>
+    </tr>
     {% for lotto in latest_list %}
+    <tr height='5'></tr>
     <tr>
         <td colspan='1'>{{ lotto.nth }}회</td>
         <td colspan='6'>- - - {{ lotto.date }}</td>
@@ -110,9 +107,10 @@
     </tr>
     <tr>
         <td></td>
-        <td colspan='2'>1등 당첨금:</td>
+        <td colspan='2' align='right'>1등 : </td>
         <td colspan='4' width="150" align="right">{{ lotto.winmoney|intcomma }} 원 ({{ lotto.winco }}명)</td>
     </tr>
+    <tr height='5'></tr>
     <tr>
         <td colspan='7' bgcolor="#cccccc" height="2"></td>
     </tr>
