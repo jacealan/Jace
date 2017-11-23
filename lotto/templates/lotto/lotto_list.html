@@ -2,18 +2,20 @@
 <div align="center">
 {% if latest_list %}
 <table>
-    <tr>
+    <!-- <tr>
         <th>회차</th>
         <th>추첨일</th>
         <th colspan='6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로또 번호</th>
         <th>보너스</th>
         <th>&nbsp;&nbsp;&nbsp;&nbsp;1등 상금</th>
-    </tr>
+    </tr> -->
     {% for lotto in latest_list %}
     <tr>
-        <td>{{ lotto.nth }}회</td>
-        <td>{{ lotto.date }}</td>
-        <td width="40" align="right"
+        <td colspan='1'>{{ lotto.nth }}회</td>
+        <td colspan='6'>- - - {{ lotto.date }}</td>
+    </tr>
+    <tr>
+        <td width="40" align="center"
             {% if lotto.no1 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no1 <= 20 %}
@@ -26,7 +28,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no1 }}</td>
-        <td width="40" align="right"
+        <td width="40" align="center"
             {% if lotto.no2 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no2 <= 20 %}
@@ -39,7 +41,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no2 }}</td>
-        <td width="40" align="right"
+        <td width="40" align="center"
             {% if lotto.no3 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no3 <= 20 %}
@@ -52,7 +54,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no3 }}</td>
-        <td width="40" align="right"
+        <td width="40" align="center"
             {% if lotto.no4 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no4 <= 20 %}
@@ -65,7 +67,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no4 }}</td>
-        <td width="40" align="right"
+        <td width="40" align="center"
             {% if lotto.no5 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no5 <= 20 %}
@@ -78,7 +80,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no5 }}</td>
-        <td width="40" align="right"
+        <td width="40" align="center"
             {% if lotto.no6 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no6 <= 20 %}
@@ -91,7 +93,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no6 }}</td>
-        <td width="40" align="right"
+        <td width="40" align="center"
             {% if lotto.nob <= 10 %}
                 style="color:#999900"
             {% elif lotto.nob <= 20 %}
@@ -103,8 +105,14 @@
             {% else %}
                 style="color:green"
             {% endif %}
-        >{{ lotto.nob }}&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td width="150" align="right">{{ lotto.winmoney|intcomma }}({{ lotto.winco }}명)</td>
+        >( {{ lotto.nob }} )</td>
+    </tr>
+    <tr>
+        <td colspan='2'></td>
+        <td colspan='5' width="150" align="right">{{ lotto.winmoney|intcomma }} ({{ lotto.winco }}명)</td>
+    </tr>
+    <tr>
+        <td colspan='7' bgcolor="#cccccc" height="2"></td>
     </tr>
     {% endfor %}
 {% else %}

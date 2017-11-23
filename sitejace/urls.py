@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from lotto import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^lotto/', views.lotto_list, name='lotto_list'),
-    # url(r'lotto', include('lotto.urls')),
+    url(r'^lotto/', include('lotto.urls')),
+    url(r'^eng/', include('eng.urls')),
 ]
