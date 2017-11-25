@@ -22,8 +22,8 @@ td,th {
             {{ sentence.sentence }}
             {# {{ sentence.category}}#}
             {# {{ sentence.number}} #}
-            {% if sentence.level is 'e' %} (초)
-            {% elif sentence.level is 'm' %} (중)
+            {% if sentence.level == 'e' %} (초)
+            {% elif sentence.level == 'm' %} (중)
             {% else %} (고)
             {% endif %}
             {# {{ sentence.level}} #}
