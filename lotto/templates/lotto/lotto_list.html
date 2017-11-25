@@ -1,4 +1,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<style>
+td {font-size:1.5em;}
+</style>
+
 {% load humanize %}
 <div align="center">
 {% if latest_list %}
@@ -13,7 +17,7 @@
         <td colspan='6'>- - - {{ lotto.date }}</td>
     </tr>
     <tr>
-        <td width="40" align="center"
+        <td width="14%" align="center"
             {% if lotto.no1 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no1 <= 20 %}
@@ -26,7 +30,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no1 }}</td>
-        <td width="40" align="center"
+        <td width="14%" align="center"
             {% if lotto.no2 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no2 <= 20 %}
@@ -39,7 +43,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no2 }}</td>
-        <td width="40" align="center"
+        <td width="14%" align="center"
             {% if lotto.no3 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no3 <= 20 %}
@@ -52,7 +56,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no3 }}</td>
-        <td width="40" align="center"
+        <td width="14%" align="center"
             {% if lotto.no4 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no4 <= 20 %}
@@ -65,7 +69,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no4 }}</td>
-        <td width="40" align="center"
+        <td width="14%" align="center"
             {% if lotto.no5 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no5 <= 20 %}
@@ -78,7 +82,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no5 }}</td>
-        <td width="40" align="center"
+        <td width="14%" align="center"
             {% if lotto.no6 <= 10 %}
                 style="color:#999900"
             {% elif lotto.no6 <= 20 %}
@@ -91,7 +95,7 @@
                 style="color:green"
             {% endif %}
         >{{ lotto.no6 }}</td>
-        <td width="40" align="center"
+        <td width="16%" align="center"
             {% if lotto.nob <= 10 %}
                 style="color:#999900"
             {% elif lotto.nob <= 20 %}
