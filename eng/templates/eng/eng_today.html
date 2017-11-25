@@ -1,41 +1,50 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<style>
-td,th {
-    font-size:1.5em;
-    padding-left:30;
-    padding-right:30;
-}
-</style>
+    <head>
+        <title>오늘의 영어</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <style>
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        td,th {
+            font-size: 1.5em;
+            padding-left: 30;
+            padding-right: 30;
+        }
+        </style>
+    </head>
 
-{% load humanize %}
-<div align="center">
-{% if sentence_list %}
-<table>
-    <tr>
-        <td bgcolor="black" style="color:white;padding-top:30;padding-bottom:15 ;" height="50"><b>English Sentence</b></td>
-    </tr>
-    {% for sentence in sentence_list %}
-    <tr>
+    {% load humanize %}
+    <div align="center">
+    {% if sentence_list %}
+    <table>
+        <tr>
+            <td bgcolor="black" style="color:white;padding-top:30;padding-bottom:15 ;" height="50"><b>English Sentence</b></td>
+        </tr>
+        {% for sentence in sentence_list %}
+        <tr>
+            <tr height='20'></tr>
+            <td>
+                {# {{ sentence.pk }}#}
+                <a href="http://translate.naver.com/#/en/ko/{{ sentence.sentence|striptags }}">
+                {% autoescape off %}{{ sentence.sentence }}{% endautoescape %}
+                </a>
+                {# {{ sentence.category}}#}
+                {# {{ sentence.number}} #}
+                {% if sentence.level == 'e' %} (초)
+                {% elif sentence.level == 'm' %} (중)
+                {% else %} (고)
+                {% endif %}
+                {# {{ sentence.level}} #}
+            </td>
+        </tr>
         <tr height='20'></tr>
-        <td>{% autoescape off %}
-            {# {{ sentence.pk }}#}
-            {{ sentence.sentence }}
-            {# {{ sentence.category}}#}
-            {# {{ sentence.number}} #}
-            {% if sentence.level == 'e' %} (초)
-            {% elif sentence.level == 'm' %} (중)
-            {% else %} (고)
-            {% endif %}
-            {# {{ sentence.level}} #}
-        {% endautoescape %}</td>
-    </tr>
-    <tr height='20'></tr>
-    <tr>
-        <td colspan='7' bgcolor="#cccccc" height="2"></td>
-    </tr>
-    {% endfor %}
-</table>
-{% else %}
-    <div>No English</div>
-{% endif %}
-</div>
+        <tr>
+            <td colspan='7' bgcolor="#cccccc" height="2"></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <div>No English</div>
+    {% endif %}
+    </div>
