@@ -17,7 +17,7 @@ td,th {
     {% for sentence in sentence_list %}
     <tr>
         <tr height='20'></tr>
-        <td style="font-size:2em;">{% autoescape off %}
+        <td>{% autoescape off %}
             {# {{ sentence.pk }}#}
             {{ sentence.sentence }}
             {# {{ sentence.category}}#}
