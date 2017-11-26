@@ -19,19 +19,61 @@
 
     </head>
 
-    {% load humanize %}
     <div align="center">
-    {% if sentence_list %}
+
+    {% if word_list %}
     <table>
         <tr>
-            <td bgcolor="black" style="color:white;padding-top:30;padding-bottom:15 ;" height="50"><b>English Sentence</b></td>
+            <td colspan="2" bgcolor="#873600" style="color:white;padding-top:30;padding-bottom:15 ;" height="50"><b>Word of English</b></td>
+        </tr>
+
+        {# {% with leftright = 1 %}#}
+        {% for word in word_list %}
+            {% if forloop.counter0|divisibleby:"2" %}
+        <tr>
+            <tr height='20'></tr>
+            <td style="color:#E59866;">
+                <a href="http://translate.naver.com/#/en/ko/{{ word.word|striptags }}" style="color:#6E2C00;">
+                {% autoescape off %}{{ word.word }}{% endautoescape %}
+                </a>
+                {% if word.level == 'e' %} (초)
+                {% elif word.level == 'm' %} (중)
+                {% else %} (고)
+                {% endif %}
+            </td>
+            {% else %}
+            <td style="color:#E59866;">
+                <a href="http://translate.naver.com/#/en/ko/{{ word.word|striptags }}" style="color:#6E2C00;">
+                {% autoescape off %}{{ word.word }}{% endautoescape %}
+                </a>
+                {% if word.level == 'e' %} (초)
+                {% elif word.level == 'm' %} (중)
+                {% else %} (고)
+                {% endif %}
+            </td>
+        </tr>
+        <tr height='20'></tr>
+        <tr>
+            <td colspan='7' bgcolor="#F6DDCC" height="2"></td>
+        </tr>
+            {% endif %}
+        {% endfor %}
+    {# </table>#}
+    {% else %}
+        <div>No Word</div>
+    {% endif %}
+
+    {% if sentence_list %}
+    {# <table>#}
+        <tr>
+            <td colspan="2" bgcolor="#283747" style="color:white;padding-top:30;padding-bottom:15 ;" height="50"><b>Sentence of English</b></td>
         </tr>
         {% for sentence in sentence_list %}
         <tr>
-            <tr height='20'></tr>
-            <td>
+            <tr colspan="2" height='20'></tr>
+            <td colspan="2" style="color:#85929E;">
                 {# {{ sentence.pk }}#}
-                <a href="http://translate.naver.com/#/en/ko/{{ sentence.sentence|striptags }}">
+                <a href="http://translate.naver.com/#/en/ko/{{ sentence.sentence|striptags }}" style="color:#1B2631;">
                 {% autoescape off %}{{ sentence.sentence }}{% endautoescape %}
                 </a>
                 {# {{ sentence.category}}#}
@@ -43,13 +85,13 @@
                 {# {{ sentence.level}} #}
             </td>
         </tr>
-        <tr height='20'></tr>
+        <tr colspan="2" height='20'></tr>
         <tr>
-            <td colspan='7' bgcolor="#cccccc" height="2"></td>
+            <td colspan="2" bgcolor="#D6DBDF" height="2"></td>
         </tr>
         {% endfor %}
     </table>
     {% else %}
-        <div>No English</div>
+        <div>No Sentence</div>
     {% endif %}
     </div>
