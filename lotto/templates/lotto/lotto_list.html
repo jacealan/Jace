@@ -12,6 +12,81 @@
         padding-left:10;
         padding-right:10;
     }
+    .numberCircle10 {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+
+    background: #B7950B;
+    border: 2px solid #B7950B;
+    color: #fff;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+    }
+    .numberCircle20 {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+
+    background: #2874A6;
+    border: 2px solid #2874A6;
+    color: #fff;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+    }
+    .numberCircle30 {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+
+    background: #B03A2E;
+    border: 2px solid #B03A2E;
+    color: #fff;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+    }
+    .numberCircle40 {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+
+    background: #616A6B;
+    border: 2px solid #616A6B;
+    color: #fff;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+    }
+    .numberCircle50 {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+
+    background: #229954;
+    border: 2px solid #229954;
+    color: #fff;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+    }
     </style>
 </head>
 
@@ -31,95 +106,95 @@
     <tr>
         <td width="14%" align="center"
             {% if lotto.no1 <= 10 %}
-                style="color:#999900"
+                class="numberCircle10"
             {% elif lotto.no1 <= 20 %}
-                style="color:blue"
+                class="numberCircle20"
             {% elif lotto.no1 <= 30 %}
-                style="color:red"
+                class="numberCircle30"
             {% elif lotto.no1 <= 40 %}
-                style="color:black"
+                class="numberCircle40"
             {% else %}
-                style="color:green"
+                class="numberCircle50"
             {% endif %}
         >{{ lotto.no1 }}</td>
         <td width="14%" align="center"
             {% if lotto.no2 <= 10 %}
-                style="color:#999900"
+                class="numberCircle10"
             {% elif lotto.no2 <= 20 %}
-                style="color:blue"
+                class="numberCircle20"
             {% elif lotto.no2 <= 30 %}
-                style="color:red"
+                class="numberCircle30"
             {% elif lotto.no2 <= 40 %}
-                style="color:black"
+                class="numberCircle40"
             {% else %}
-                style="color:green"
+                class="numberCircle50"
             {% endif %}
         >{{ lotto.no2 }}</td>
         <td width="14%" align="center"
             {% if lotto.no3 <= 10 %}
-                style="color:#999900"
+                class="numberCircle10"
             {% elif lotto.no3 <= 20 %}
-                style="color:blue"
+                class="numberCircle20"
             {% elif lotto.no3 <= 30 %}
-                style="color:red"
+                class="numberCircle30"
             {% elif lotto.no3 <= 40 %}
-                style="color:black"
+                class="numberCircle40"
             {% else %}
-                style="color:green"
+                class="numberCircle50"
             {% endif %}
         >{{ lotto.no3 }}</td>
         <td width="14%" align="center"
             {% if lotto.no4 <= 10 %}
-                style="color:#999900"
+                class="numberCircle10"
             {% elif lotto.no4 <= 20 %}
-                style="color:blue"
+                class="numberCircle20"
             {% elif lotto.no4 <= 30 %}
-                style="color:red"
+                class="numberCircle30"
             {% elif lotto.no4 <= 40 %}
-                style="color:black"
+                class="numberCircle40"
             {% else %}
-                style="color:green"
+                class="numberCircle50"
             {% endif %}
         >{{ lotto.no4 }}</td>
         <td width="14%" align="center"
             {% if lotto.no5 <= 10 %}
-                style="color:#999900"
+                class="numberCircle10"
             {% elif lotto.no5 <= 20 %}
-                style="color:blue"
+                class="numberCircle20"
             {% elif lotto.no5 <= 30 %}
-                style="color:red"
+                class="numberCircle30"
             {% elif lotto.no5 <= 40 %}
-                style="color:black"
+                class="numberCircle40"
             {% else %}
-                style="color:green"
+                class="numberCircle50"
             {% endif %}
         >{{ lotto.no5 }}</td>
         <td width="14%" align="center"
             {% if lotto.no6 <= 10 %}
-                style="color:#999900"
+                class="numberCircle10"
             {% elif lotto.no6 <= 20 %}
-                style="color:blue"
+                class="numberCircle20"
             {% elif lotto.no6 <= 30 %}
-                style="color:red"
+                class="numberCircle30"
             {% elif lotto.no6 <= 40 %}
-                style="color:black"
+                class="numberCircle40"
             {% else %}
-                style="color:green"
+                class="numberCircle50"
             {% endif %}
         >{{ lotto.no6 }}</td>
         <td width="16%" align="center"
             {% if lotto.nob <= 10 %}
-                style="color:#999900"
+                class="numberCircle10" style="background:#fff;color:#B7950B;"
             {% elif lotto.nob <= 20 %}
-                style="color:blue"
+                class="numberCircle20" style="background:#fff;color:#2874A6;"
             {% elif lotto.nob <= 30 %}
-                style="color:red"
+                class="numberCircle30" style="background:#fff;color:#B03A2E;"
             {% elif lotto.nob <= 40 %}
-                style="color:black"
+                class="numberCircle40" style="background:#fff;color:#616A6B;"
             {% else %}
-                style="color:green"
+                class="numberCircle50" style="background:#fff;color:#229954;"
             {% endif %}
-        >({{ lotto.nob }})</td>
+        >{{ lotto.nob }}</td>
     </tr>
     <tr>
         <td></td>
