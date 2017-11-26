@@ -36,20 +36,24 @@
                 <a href="http://translate.naver.com/#/en/ko/{{ word.word|striptags }}" style="color:#6E2C00;">
                 {% autoescape off %}{{ word.word }}{% endautoescape %}
                 </a>
+                <span style="font-size:0.7em;text-align:right;">
                 {% if word.level == 'e' %} (초)
                 {% elif word.level == 'm' %} (중)
                 {% else %} (고)
                 {% endif %}
+                </span>
             </td>
             {% else %}
             <td style="color:#E59866;">
                 <a href="http://translate.naver.com/#/en/ko/{{ word.word|striptags }}" style="color:#6E2C00;">
                 {% autoescape off %}{{ word.word }}{% endautoescape %}
                 </a>
+                <span style="font-size:0.7em;text-align:right;">
                 {% if word.level == 'e' %} (초)
                 {% elif word.level == 'm' %} (중)
                 {% else %} (고)
                 {% endif %}
+                </span>
             </td>
         </tr>
         <tr height='20'></tr>
@@ -78,10 +82,12 @@
                 </a>
                 {# {{ sentence.category}}#}
                 {# {{ sentence.number}} #}
+                <span style="font-size:0.7em;text-align:right;">
                 {% if sentence.level == 'e' %} (초)
                 {% elif sentence.level == 'm' %} (중)
                 {% else %} (고)
                 {% endif %}
+                </span>
                 {# {{ sentence.level}} #}
             </td>
         </tr>
